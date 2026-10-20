@@ -1,4 +1,3 @@
-// 1. Dados em Memória
 const clientes = [
     { cpf: "111.222.333-44", senha: "123", nome: "Dennis Lopes", saldo: 5000 },
     { cpf: "222.333.444-55", senha: "123", nome: "Nicolas Silva", saldo: 1500 },
@@ -9,7 +8,6 @@ const clientes = [
 
 let usuarioLogado = null;
 
-// 2. Seleção de Elementos (DOM)
 const secaoLogin = document.querySelector('#login-section');
 const secaoCadastro = document.querySelector('#cadastro-section');
 const secaoSucesso = document.querySelector('#sucesso-section');
@@ -19,7 +17,6 @@ const campoSaldo = document.querySelector('#saldo-valor');
 const boasVindas = document.querySelector('#boas-vindas');
 const loginErro = document.querySelector('#login-erro');
 
-// 3. Alternância entre Telas (Login <-> Cadastro)
 document.querySelector('#link-ir-cadastro').addEventListener('click', (e) => {
     e.preventDefault();
     secaoLogin.style.display = 'none';
@@ -32,7 +29,6 @@ document.querySelector('#link-voltar-login').addEventListener('click', (e) => {
     secaoLogin.style.display = 'block';
 });
 
-// 4. Eventos de Login
 document.querySelector('#btn-login').addEventListener('click', () => {
     const cpfDigitado = document.querySelector('#input-cpf').value.trim();
     const senhaDigitada = document.querySelector('#input-senha').value.trim();
@@ -52,22 +48,17 @@ document.querySelector('#btn-login').addEventListener('click', () => {
     }
 });
 
-// 5. Lógica de Submissão de Cadastro (Onde aplicaremos as RegEx)
 document.querySelector('#form-cadastro').addEventListener('submit', (e) => {
     e.preventDefault();
 
-    // TODO: Os alunos vão validar os campos com RegEx e conferir se as senhas coincidem.
-    // Após a validação com sucesso, transita para a tela de análise:
     secaoCadastro.style.display = 'none';
     secaoSucesso.style.display = 'block';
 });
 
-// 6. Botão para voltar ao início a partir da tela de sucesso
 document.querySelector('#btn-voltar-inicio').addEventListener('click', () => {
     location.reload();
 });
 
-// 7. Operações Bancárias (Espaço reservado para as próximas aulas / API)
 document.querySelector('#btn-depositar').addEventListener('click', () => { });
 document.querySelector('#btn-sacar').addEventListener('click', () => { });
 document.querySelector('#btn-transferir').addEventListener('click', () => { });
