@@ -2,13 +2,14 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Banco SENAC - Conta Digital</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="container">
+
         
-        <!-- 1. SEÇÃO DE LOGIN -->
         <section id="login-section">
             <div class="banco-logo-container">
                 <img src="senac-logo.png" alt="Logótipo Senac" class="logo-senac">
@@ -19,7 +20,7 @@
                     <span>Banco Digital</span>
                 </div>
             </div>
-            
+
             <p class="subtitle">Portal do Cliente</p>
 
             <input type="text" id="input-cpf" placeholder="CPF (ex: 111.222.333-44)">
@@ -32,16 +33,21 @@
             </p>
         </section>
 
-        <!-- 2. SEÇÃO DE CADASTRO / ABERTURA DE CONTA -->
+        
         <section id="cadastro-section" style="display: none;">
             <div class="painel-topo">
                 <img src="senac-logo.png" alt="Logótipo Senac" class="logo-senac-mini">
                 <span class="badge-banco">Banco SENAC</span>
             </div>
-            
-            <h2 class="titulo-secao">Registo de Novo Cliente</h2>
 
-            <form id="form-cadastro">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin: 10px 0 15px 0;">
+                <h2 class="titulo-secao" style="margin: 0;">Registo de Novo Cliente</h2>
+                <a href="#" id="link-limpar-rascunho" style="font-size: 0.75rem; color: #dc3545; text-decoration: none; font-weight: bold;">
+                    Limpar rascunho
+                </a>
+            </div>
+
+            <form id="form-cadastro" novalidate>
                 <div class="campo-grupo">
                     <label for="cad-nome">Nome Completo</label>
                     <input type="text" id="cad-nome" placeholder="Ex: Maria Silva">
@@ -91,7 +97,10 @@
                     <label for="cad-confirma-senha">Confirmar Senha</label>
                     <input type="password" id="cad-confirma-senha" placeholder="Digite a senha novamente">
                 </div>
-                
+
+               
+                <p id="cadastro-erro" class="mensagem-erro" style="display: none;"></p>
+
                 <button type="submit" id="btn-cadastrar">Concluir Registo</button>
             </form>
 
@@ -100,7 +109,7 @@
             </p>
         </section>
 
-        <!-- 3. TELA DE SUCESSO / CONTA EM ANÁLISE -->
+       
         <section id="sucesso-section" style="display: none;">
             <div class="painel-topo">
                 <img src="senac-logo.png" alt="Logótipo Senac" class="logo-senac-mini">
@@ -126,7 +135,7 @@
             </div>
         </section>
 
-        <!-- 4. PAINEL DO CLIENTE (DASHBOARD) -->
+     
         <section id="painel-section" style="display: none;">
             <div class="painel-header">
                 <div class="painel-topo">
@@ -135,7 +144,7 @@
                 </div>
                 <h2 id="boas-vindas">Olá, Cliente</h2>
             </div>
-            
+
             <div class="saldo-box">
                 <p>Saldo Disponível</p>
                 <strong id="saldo-valor">R$ 0,00</strong>
@@ -144,7 +153,7 @@
             <div class="operacoes">
                 <h3>Operações Bancárias</h3>
                 <input type="number" id="valor-op" placeholder="Valor R$" step="0.01" min="0">
-                
+
                 <div class="botoes">
                     <button id="btn-depositar">Depositar</button>
                     <button id="btn-sacar">Sacar</button>
